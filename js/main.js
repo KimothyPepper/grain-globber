@@ -1,11 +1,17 @@
-grains.forEach(function (grains) {
-  var $li = $('<li>');
+var $ul = $('ul');
+
+grains.forEach(function (grain) {
+  var $name = $('<h2>');
   var $img = $('<img>');
-  var $h2 = $('<h2>');
-  var $p = $('<p>');
+  var $desc = $('<p>');
+  var $li = $('<li>');
 
-  $li.html(grains.name);
+  $img.attr('src', 'images/' + grain.img);
+  $name.html(grain.name);
+  $desc.html(grain.desc);
 
-  $img.attr('src', 'images/' + grains.img);
-
+  $li.append($img);
+  $li.append($name);
+  $li.append($desc);
+  $ul.append($li);
 });
